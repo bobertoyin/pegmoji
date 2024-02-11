@@ -1,0 +1,286 @@
+💭 🎮 is our game runner class, containing all the procedural methods necessary. 
+🕊 🎮 🍇
+    💭🔜 Read in a valid integer from the user.
+
+    prompt - The prompt to show to the user.
+    min - The minimum valid integer.
+    max - The maximum valid integer.
+
+    Returns the user's valid integer.
+    🔚💭
+    🐇❗️ 👀 prompt 🔡 min 🔢 max 🔢 ➡ 🔢 🍇
+        👄 prompt ❗️
+        🔢 🆕🔡▶️👂🏼❗️ 10 ❗️ ➡ 🖍🆕 user_integer
+        🔁 ❎ 
+            ❎ user_integer 🙌 🤷‍♀️ ❗️ 🤝 
+            🍺 user_integer ▶️🙌 min 🤝 
+            🍺 user_integer ◀️🙌 max 
+        ❗️ 🍇
+            👄 🔤Please enter your choice as an integer between 🧲min🧲 and 🧲max🧲: 🔤 ❗️
+            🔢 🆕🔡▶️👂🏼❗️ 10 ❗️ ➡ 🖍 user_integer
+        🍉
+        ↩️ 🍺 user_integer
+    🍉
+
+    💭🔜 Create a board of a specified type.
+
+    board_type - The board type (assumed to be between 1 and 4).
+
+    Returns an initialized 2D array based on the given board type.
+    🔚💭
+    🐇❗️ 🧱 board_type 🔢 ➡ 🍨🐚🍨🐚🔡🍆🍆 🍇
+        🆕🍨🐚🍨🐚🔡🍆🍆❗️ ➡ 🖍🆕 board
+        ↪️ board_type 🙌 1 🍇
+            🐻 board 🎶 🔤###@@@###🔤 ❗️ ❗️
+            🐻 board 🎶 🔤###@@@###🔤 ❗️ ❗️
+            🐻 board 🎶 🔤@@@@@@@@@🔤 ❗️ ❗️
+            🐻 board 🎶 🔤@@@@-@@@@🔤 ❗️ ❗️
+            🐻 board 🎶 🔤@@@@@@@@@🔤 ❗️ ❗️
+            🐻 board 🎶 🔤###@@@###🔤 ❗️ ❗️
+            🐻 board 🎶 🔤###@@@###🔤 ❗️ ❗️
+        🍉
+        🙅↪ board_type 🙌 2 🍇
+            🐻 board 🎶 🔤#-@@-#🔤 ❗️ ❗️
+            🐻 board 🎶 🔤-@@@@-🔤 ❗️ ❗️
+            🐻 board 🎶 🔤@@@@@@🔤 ❗️ ❗️
+            🐻 board 🎶 🔤@@@@@@🔤 ❗️ ❗️
+            🐻 board 🎶 🔤-@@@@-🔤 ❗️ ❗️
+            🐻 board 🎶 🔤#-@@-#🔤 ❗️ ❗️
+        🍉
+        🙅↪ board_type 🙌 3 🍇
+            🐻 board 🎶 🔤###-@-###🔤 ❗️ ❗️
+            🐻 board 🎶 🔤##-@@@-##🔤 ❗️ ❗️
+            🐻 board 🎶 🔤#-@@-@@-#🔤 ❗️ ❗️
+            🐻 board 🎶 🔤-@@@@@@@-🔤 ❗️ ❗️
+        🍉
+        🙅↪ board_type 🙌 4 🍇
+            🐻 board 🎶 🔤-----🔤 ❗️ ❗️
+            🐻 board 🎶 🔤-@@@-🔤 ❗️ ❗️
+            🐻 board 🎶 🔤--@--🔤 ❗️ ❗️
+            🐻 board 🎶 🔤--@--🔤 ❗️ ❗️
+            🐻 board 🎶 🔤-----🔤 ❗️ ❗️
+            
+        🍉
+        ↩️ board
+    🍉
+
+    💭🔜 Display a board to the terminal.
+
+    board: The board to display (assumes that the board is a square).
+    🔚💭
+    🐇❗️ 🗣️ board 🍨🐚🍨🐚🔡🍆🍆 🍇
+        👄 🔤  🔤 ❗️
+        🔂 row_index 🆕⏩ 0 📏 🐽 board 0 ❗️ ❓ ❗️ 🍇
+            👄 🔤🧲row_index ➕ 1🧲🔤 ❗️
+        🍉
+        😀 🔤🔤 ❗️
+        🔂 row_index 🆕⏩ 0 📏 board ❓ ❗️ 🍇
+            👄 🔤🧲row_index ➕ 1🧲 🔤 ❗️
+            🔂 cell 🐽 board row_index ❗️ 🍇
+                👄 cell ❗️
+            🍉
+            😀 🔤🔤 ❗️
+        🍉
+    🍉
+
+    💭🔜 Return the number of pegs left on a board.
+
+    board: The board to count pegs for.
+
+    Returns the number of pegs.
+    🔚💭
+    🐇❗️ 📌 board 🍨🐚🍨🐚🔡🍆🍆 ➡️ 🔢 🍇
+        0 ➡ 🖍🆕 count
+        🔂 row board 🍇
+            🔂 cell row 🍇
+                ↪️ cell 🙌 🔤@🔤 🍇
+                    count ⬅️➕ 1
+                🍉
+            🍉
+        🍉
+        ↩️ count
+    🍉
+
+    💭🔜 Determine if a move is valid on a board.
+
+    board: The board to determine validity for.
+    row: The row number (1-based, assumed to be within the board).
+    column: The column number (1-based, assumed to be within the board).
+    direction: The direction (between 1 and 4).
+
+    Returns true if the move is valid.
+    🔚💭
+    🐇❗️ ✅ board 🍨🐚🍨🐚🔡🍆🍆 row 🔢 column 🔢 direction 🔢 ➡️ 👌 🍇
+        row ➖ 1 ➡️ row_index
+        column ➖ 1 ➡️ column_index
+        row_index ➡ 🖍🆕 landing_row_index
+        column_index ➡ 🖍🆕 landing_column_index
+        row_index ➡ 🖍🆕 jumped_row_index
+        column_index ➡ 🖍🆕 jumped_column_index
+        ↪️ ❎ 🐽 🐽 board row_index ❗️ column_index ❗️ 🙌 🔤@🔤 ❗️ 🍇
+            ↩️ 👎
+        🍉
+        ↪️ direction 🙌 1 🍇
+            landing_row_index ⬅️➖ 2
+            jumped_row_index ⬅️➖ 1
+        🍉
+        🙅↪️ direction 🙌 2 🍇
+            landing_row_index ⬅️➕ 2
+            jumped_row_index ⬅️➕ 1
+        🍉
+        🙅↪️ direction 🙌 3 🍇
+            landing_column_index ⬅️➖ 2
+            jumped_column_index ⬅️➖ 1
+        🍉
+        🙅↪️ direction 🙌 4 🍇
+            landing_column_index ⬅️➕ 2
+            jumped_column_index ⬅️➕ 1
+        🍉
+        🙅🍇
+            ↩️ 👎
+        🍉   
+        ↪️ 
+            landing_row_index ◀️ 0 👐 
+            landing_row_index ▶️🙌 📏 board ❓ 👐 
+            landing_column_index ◀️ 0 👐 
+            landing_column_index ▶️🙌 📏 🐽 board row_index ❗️ ❓ 👐
+            ❎ 🐽 🐽 board landing_row_index ❗️ landing_column_index ❗️ 🙌 🔤-🔤 ❗️ 👐
+            ❎ 🐽 🐽 board jumped_row_index ❗️ jumped_column_index ❗️ 🙌 🔤@🔤 ❗️
+        🍇
+            ↩️ 👎
+        🍉
+        ↩️ 👍
+    🍉
+
+    💭🔜 Read a valid move from the user.
+
+    board: The board for the user to make a move.
+
+    Returns the user's selected move as three components: row, column, and direction.
+    🔚💭
+    🐇❗️ 🕹️ board 🍨🐚🍨🐚🔡🍆🍆 ➡️ 🍨🐚🔢🍆 🍇
+        👀🕊🎮 🔤Choose the COLUMN of a peg you'd like to move: 🔤 1 📏 🐽 board 0 ❗️ ❓ ❗️ ➡️ 🖍🆕 column
+        👀🕊🎮 🔤Choose the ROW of a peg you'd like to move: 🔤 1 📏 board ❓ ❗️ ➡️ 🖍🆕 row
+        👀🕊🎮 🔤Choose a DIRECTION to move that peg 1) UP, 2) DOWN, 3) LEFT, or 4) RIGHT: 🔤 1 4 ❗️ ➡️ 🖍🆕 direction
+        🔁 ❎ ✅🕊🎮 board row column direction ❗️ ❗️ 🍇
+            🔤🔤 ➡️ 🖍🆕 direction_text
+            ↪️ direction 🙌 1 🍇
+                🔤UP🔤 ➡️ 🖍 direction_text
+            🍉
+            🙅↪️ direction 🙌 2 🍇
+                🔤DOWN🔤 ➡️ 🖍 direction_text
+            🍉
+            🙅↪️ direction 🙌 3 🍇
+                🔤LEFT🔤 ➡️ 🖍 direction_text
+            🍉
+            🙅↪️ direction 🙌 4 🍇
+                🔤RIGHT🔤 ➡️ 🖍 direction_text
+            🍉
+            😀 🔤Moving a peg from row 🧲row🧲 and column 🧲column🧲 🧲direction_text🧲 is not currently a legal move.🔤 ❗️
+            👀🕊🎮 🔤Choose the COLUMN of a peg you'd like to move: 🔤 1 📏 🐽 board 0 ❗️ ❓ ❗️ ➡️ 🖍 column
+            👀🕊🎮 🔤Choose the ROW of a peg you'd like to move: 🔤 1 📏 board ❓ ❗️ ➡️ 🖍 row
+            👀🕊🎮 🔤Choose a DIRECTION to move that peg 1) UP, 2) DOWN, 3) LEFT, or 4) RIGHT: 🔤 1 4 ❗️ ➡️ 🖍 direction
+        🍉  
+        ↩️ 🍿 row column direction 🍆
+    🍉
+
+    💭🔜 Perform a move on a board.
+
+    board: The board to modify.
+    row: The row number (1-based).
+    column: The column number (1-based).
+    direction: The direction (between 1 and 4).
+
+    Returns the modified board.
+    🔚💭
+    🐇❗️ 📝 board 🍨🐚🍨🐚🔡🍆🍆 row 🔢 column 🔢 direction 🔢 ➡️ 🍨🐚🍨🐚🔡🍆🍆 🍇 
+        🆕🍨🐚🍨🐚🔡🍆🍆❗️ ➡ 🖍🆕 new_board
+        row ➖ 1 ➡️ row_index
+        column ➖ 1 ➡️ column_index
+        row_index ➡ 🖍🆕 landing_row_index
+        column_index ➡ 🖍🆕 landing_column_index
+        row_index ➡ 🖍🆕 jumped_row_index
+        column_index ➡ 🖍🆕 jumped_column_index
+        ↪️ direction 🙌 1 🍇
+            landing_row_index ⬅️➖ 2
+            jumped_row_index ⬅️➖ 1
+        🍉
+        🙅↪️ direction 🙌 2 🍇
+            landing_row_index ⬅️➕ 2
+            jumped_row_index ⬅️➕ 1
+        🍉
+        🙅↪️ direction 🙌 3 🍇
+            landing_column_index ⬅️➖ 2
+            jumped_column_index ⬅️➖ 1
+        🍉
+        🙅↪️ direction 🙌 4 🍇
+            landing_column_index ⬅️➕ 2
+            jumped_column_index ⬅️➕ 1
+        🍉
+        🔂 current_row_index 🆕⏩ 0 📏 board ❓ ❗️ 🍇
+            🆕🍨🐚🔡🍆❗️ ➡ 🖍🆕 new_row 
+            🔂 current_column_index 🆕⏩ 0 📏 🐽 board current_row_index ❗️ ❓ ❗️ 🍇
+                🐽 🐽 board current_row_index ❗️ current_column_index ❗️ ➡ 🖍🆕 tile
+                ↪️ 
+                    🤜 current_row_index 🙌 row_index 🤝 current_column_index 🙌 column_index 🤛 👐
+                    🤜 current_row_index 🙌 jumped_row_index 🤝 current_column_index 🙌 jumped_column_index 🤛
+                🍇
+                    🔤-🔤 ➡ 🖍 tile
+                🍉
+                🙅↪️ current_row_index 🙌 landing_row_index 🤝 current_column_index 🙌 landing_column_index 🍇
+                    🔤@🔤 ➡ 🖍 tile
+                🍉
+                🐻 new_row tile ❗️
+            🍉
+            🐻 new_board new_row ❗️
+        🍉
+        ↩️ new_board
+    🍉
+
+    💭🔜 Returns the number of valid moves left for a board.
+
+    board: The board to evaluate.
+
+    Returns the number of valid moves left.
+    🔚💭
+    🐇❗️ 🤔 board 🍨🐚🍨🐚🔡🍆🍆 ➡️ 🔢 🍇
+        0 ➡ 🖍🆕 count
+        🔂 direction 🆕⏩ 1 5 ❗️ 🍇
+            🔂 row 🆕⏩ 1 📏 board ❓ ➕ 1 ❗️ 🍇
+                🔂 column 🆕⏩ 1 📏 🐽 board row ➖ 1 ❗️ ❓ ➕ 1 ❗️ 🍇
+                    ↪️ ✅🕊🎮 board row column direction ❗️ 🍇
+                        count ⬅️➕ 1
+                    🍉
+                🍉
+            🍉
+        🍉
+        ↩️ count
+    🍉
+🍉
+
+🏁 🍇
+    😀 🔤WELCOME TO PEGMOJI SOLITAIRE!🔤 ❗️
+    😀 🔤=============================🔤 ❗️
+    😀 🔤Board Style Menu🔤 ❗️
+    😀 🔤🔤 ❗️
+    😀 🔤Board Style Menu🔤 ❗️
+    😀 🔤  1) Cross🔤 ❗️
+    😀 🔤  2) Circle🔤 ❗️
+    😀 🔤  3) Triangle🔤 ❗️
+    😀 🔤  4) Simple T🔤 ❗️
+    🧱🕊🎮 👀🕊🎮 🔤Choose a board style: 🔤 1 4 ❗️ ❗️ ➡ 🖍🆕 board
+    🔁 🤔🕊🎮 board ❗️ ▶️ 0 🍇
+        🗣️🕊🎮 board ❗️
+        🕹️🕊🎮 board ❗️ ➡ move
+        📝🕊🎮 board 🐽 move 0 ❗️ 🐽 move 1 ❗️ 🐽 move 2 ❗️ ❗️ ➡ 🖍 board
+    🍉
+    🗣️🕊🎮 board ❗️
+    ↪️ 📌🕊🎮 board ❗️ 🙌 1 🍇
+        😀 🔤Congrats, you won!🔤 ❗️
+    🍉
+    🙅🍇
+        😀 🔤It looks like there are no more legal moves.  Please try again.🔤 ❗️
+    🍉
+    😀 🔤========================================🔤 ❗️
+    😀 🔤THANK YOU FOR PLAYING PEGMOJI SOLITAIRE!🔤 ❗️
+🍉
